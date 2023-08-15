@@ -25,6 +25,7 @@
  *                         +---+
  *
  * Copyright (c) 2020 Jay van Hutten
+ * Palette export (c) 2023 Tony Marino
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
