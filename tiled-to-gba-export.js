@@ -122,7 +122,9 @@ var customMapFormat = {
                                 let currentTileX = x+(SCREENBLOCKWIDTH*k);
                                 let currentTileY = y+(SCREENBLOCKHEIGHT*j);
                                 let currentTile = currentLayer.cellAt(currentTileX, currentTileY);
+                                let currentObj  = currentLayer.tileAt(currentTileX, currentTileY);
                                 var currentTileID = currentTile.tileId;
+                                var currentPalID = currentObj.property("Palette");
 
                                 // Default to 0x0000 for blank tiles
                                 if (currentTileID == "-1") {
@@ -136,6 +138,12 @@ var customMapFormat = {
                                         // Set the VFLIP bit for this screen entry
                                         currentTileID |= (1 << 11);
                                     }
+
+                                    if (currentPalID <= "-1" || currentPalID > 15 ) {
+                                        currentPalID = 0;
+                                    }
+
+                                    currentTileID |= (currentPalID << 12);
 
                                     sourceFileData += decimalToHex(currentTileID, 4)+", ";
                                 }
