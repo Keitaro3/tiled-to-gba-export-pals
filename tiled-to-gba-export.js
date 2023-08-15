@@ -59,7 +59,7 @@ function decimalToHex(p_decimal, p_padding) {
 }
 
 var customMapFormat = {
-    name: "GBA source files - regular",
+    name: "GBA source files w/ palettes - regular",
     extension: "c *.h",
     write:
 
