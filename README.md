@@ -1,4 +1,11 @@
-# Tiled to GBA export
+# Tiled to GBA export w/ Palettes
+This is a modified version of the original tiled-to-gba-export source. It works exactly the same as the original, except this version assumes each tile has been assigned a custom property named "Palette", corresponding to an integer between 0 and 15. This will assign the appropriate BG palette slot to a given tile, allowing for more expansive 4bpp tilesets to be used. The reason for this is that the original exporter simply assigned all tiles to use Palette 0, which is fine if your tileset only uses 16 colors. This will simply allow you the opportunity to have more control over your output, which is something I required for my own project.
+
+For this to work, you MUST assign all tiles a custom property called "Palette". This property must be an integer, and must be between 0 and 15 (going outside this parameter will default to 0 in the output). The number you choose should correspond to a given palette slot entry in your game. I searched for a long time and couldn't find something that did this functionality, so hopefully someone else will find this useful as well!
+
+PLEASE ALSO NOTE: I've currently only updated the exporting of "regular" backgrounds. The affine backgrounds file will be updated soon but otherwise does not currently support palette assignment!
+
+# Orignal README.md
 These are a set of extensions/export plugins for the [Tiled map editor](https://www.mapeditor.org/) that add the following types to the "Export As" menu:
 
 * GBA source files - affine (*.c, *.h)
